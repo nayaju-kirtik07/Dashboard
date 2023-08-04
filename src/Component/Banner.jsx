@@ -12,7 +12,7 @@ import { AuthenticationContext } from "../Context/AuthContext";
 const Banner = () => {
   const { setSuccessMessage, setErrorMessage, setSuccessShow, setErrorShow } =
     useContext(Context);
-    const { accessToken } = useContext(AuthenticationContext);
+  const { accessToken } = useContext(AuthenticationContext);
   const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [localData, setLocalData] = useState("");
@@ -95,14 +95,13 @@ const Banner = () => {
       })
       .catch((err) => {
         setLoader(false);
-        console.log(err);
+        // console.log(err);
       });
-
   }, [reload]);
 
   useEffect(() => {
     setLocalData(accessToken);
-  } , [accessToken]);
+  }, [accessToken]);
 
   const handleDelete = (e) => {
     e.preventDefault();
@@ -160,7 +159,7 @@ const Banner = () => {
         authorization: `Bearer ${localData}`,
       },
     })
-    .then((res) => {
+      .then((res) => {
         setReload(!reload);
         setSuccessMessage("Banner updated successfully");
         closeModal();

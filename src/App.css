@@ -24,7 +24,7 @@
 
 .button {
   border: 1px solid black;
-  border-radius: 50px;
+  border-radius: 50px ;
   width: 28rem;
   background-color: aliceblue;
 }
@@ -424,5 +424,6 @@
 .team-count{
   background-color: #f00606bd;
   color: white;
+
 }
 
